@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Package References">
-    <PackageReference Include="FluentValidation"/>
+    <PackageReference Include="FluentValidation" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
@@ -15,6 +15,10 @@
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Application.SharedKernel\Application.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Projects\Queries\" />
   </ItemGroup>
 
 </Project>

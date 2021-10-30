@@ -7,7 +7,6 @@ using System.Reflection;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Nikiforoval.CA.Template.Application.SharedKernel.Mappings;
 using Nikiforoval.CA.Template.Application.SharedKernel.PipelineBehaviors;
 
 public static class ServiceCollectionExtensions

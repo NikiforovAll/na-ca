@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Nikiforoval.CA.Template.Api.Filters;
 using Nikiforoval.CA.Template.Api.Formatters.FluentValidation;
 using Nikiforoval.CA.Template.Api.Services;
@@ -69,19 +68,13 @@ internal class Startup
     }
 
     /// <summary>
-    /// 
+    /// Application pipeline
     /// </summary>
     /// <param name="app"></param>
-    /// <param name="env"></param>
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app)
     {
         app.UseForwardedHeaders();
         app.UseCustomSerilogRequestLogging();
-
-        if (env.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-        }
 
         app.UseStaticFiles()
             .UseDefaultFiles();

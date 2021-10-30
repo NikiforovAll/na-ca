@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NSwag;
 using NSwag.Generation.Processors.Security;
-using ZymLabs.NSwag.FluentValidation;
 
 internal static partial class ServiceCollectionExtensions
 {
@@ -20,8 +19,6 @@ internal static partial class ServiceCollectionExtensions
     /// <returns>The services with Swagger services added.</returns>
     public static IServiceCollection AddCustomSwagger(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddSingleton<FluentValidationSchemaProcessor>();
-
         var apiVersionProvider = services.BuildServiceProvider()
             .GetRequiredService<IApiVersionDescriptionProvider>();
         foreach (var apiVersionDescription in apiVersionProvider.ApiVersionDescriptions)
@@ -72,10 +69,6 @@ internal static partial class ServiceCollectionExtensions
 
                 options.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("oauth2"));
                 options.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
-
-                var fluentValidationSchemaProcessor = serviceProvider
-                    .GetService<FluentValidationSchemaProcessor>();
-                options.SchemaProcessors.Add(fluentValidationSchemaProcessor);
             });
         }
         return services;

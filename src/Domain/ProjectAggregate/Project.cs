@@ -1,7 +1,8 @@
-﻿// Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
+// Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
 namespace Nikiforoval.CA.Template.Domain.ProjectAggregate;
+
 using Nikiforoval.CA.Template.Domain.ProjectAggregate.Events;
 using Nikiforoval.CA.Template.Domain.SharedKernel;
 using Nikiforoval.CA.Template.Domain.ValueObjects;
@@ -21,6 +22,15 @@ public class Project : AuditableEntity, IHasDomainEvent, IAggregateRoot
     public ProjectStatus Status => this.items.All(i => i.IsDone) ? ProjectStatus.Complete : ProjectStatus.InProgress;
 
     public List<DomainEvent> DomainEvents { get; private set; } = new();
+
+    /// <summary>
+    /// EF required
+    /// </summary>
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    private Project()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    {
+    }
 
     public Project(string name, Colour colour)
     {

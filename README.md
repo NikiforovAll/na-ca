@@ -1,4 +1,4 @@
-# Nikiforovall.CleanArchitecture.Tepmlate
+# Nikiforovall.CleanArchitecture.Tepmlate \[na-ca\]
 
 ## Technologies
 
@@ -45,16 +45,16 @@ Inspired by:
 
 TODO: [X] ManagePackageVersionsCentrally
 TODO: [X] Move logging to infra
-TODO: [] required configuration
 TODO: [X] fix formatting in csproj file, should be consistent
-TODO: [] migrate to latest and greatest, e.g: fluent validation, dotnet-outdated
+TODO: [X] migrate to latest and greatest, e.g: fluent validation, dotnet-outdated
 TODO: [] add unit tests
 TODO: [] add integrations tests
 TODO: [] add github ci
 TODO: [] finish readme
 TODO: [] dockerize
 TODO: [] TreatWarningsAsErrors
-TODO: [] check logging implementation, correct implemetation with LoggerMessage.Define
-TODO: [] cleanup appsettings.json
+TODO: [X] cleanup appsettings.json
 TODO: [] add mass transit integration example for worker (optional)
 TODO: [] add example of application service, e.g: message broker publisher
+TODO: [] clear warnings
+TODO: [] ensure nullability (e.g: dtos)

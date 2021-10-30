@@ -16,5 +16,7 @@ public class ToDoConfiguration : IEntityTypeConfiguration<ToDoItem>
 
         builder.Property(t => t.Description)
             .HasMaxLength(500);
+
+        builder.Ignore(e => e.DomainEvents);
     }
 }

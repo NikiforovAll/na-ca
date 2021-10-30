@@ -17,5 +17,7 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
 
         builder
             .OwnsOne(b => b.Colour);
+
+        builder.Ignore(e => e.DomainEvents);
     }
 }
