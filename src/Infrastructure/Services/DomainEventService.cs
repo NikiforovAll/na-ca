@@ -6,10 +6,10 @@ namespace Nikiforoval.CA.Template.Infrastructure.Services;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Nikiforoval.CA.Template.Application.SharedKernel;
 using Nikiforoval.CA.Template.Application.SharedKernel.Interfaces;
 using Nikiforoval.CA.Template.Application.SharedKernel.Models;
 using Nikiforoval.CA.Template.Domain.SharedKernel;
-using Nikiforoval.CA.Template.Application.SharedKernel;
 
 public class DomainEventService : IDomainEventService
 {

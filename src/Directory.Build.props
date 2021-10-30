@@ -2,6 +2,11 @@
   <Import Project="../Directory.Build.props" />
 
   <PropertyGroup>
-    <!-- <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally> -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="all" />
+  </ItemGroup>
+
 </Project>

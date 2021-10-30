@@ -2,14 +2,17 @@
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
 
-using Serilog;
-using Serilog.Core;
 using Nikiforoval.CA.Template.Api;
+using Nikiforoval.CA.Template.Infrastructure;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var hostEnvironment = builder.Environment;
+var applicationName = hostEnvironment.ApplicationName;
+var environmentName = hostEnvironment.EnvironmentName;
 
-Log.Logger = CreateLogger(hostEnvironment, builder.Configuration);
+Log.Logger = ApplicationLoggerFactory
+    .CreateLogger(builder.Configuration, hostEnvironment);
 
 builder.Host
     .UseSerilog()
@@ -28,24 +31,14 @@ startup.Configure(app, app.Environment);
 
 try
 {
-    Log.Information(
-        "Started {Application} in {Environment} mode.",
-        hostEnvironment.ApplicationName,
-        hostEnvironment.EnvironmentName);
-    app.Run();
-    Log.Information(
-        "Stopped {Application} in {Environment} mode.",
-        hostEnvironment.ApplicationName,
-        hostEnvironment.EnvironmentName);
+    LogLifecycle("Started {Application} in {Environment} mode.");
+    await app.RunAsync();
+    LogLifecycle("Stopped {Application} in {Environment} mode.");
     return 0;
 }
 catch (Exception exception)
 {
-    Log.Fatal(
-        exception,
-        "{Application} terminated unexpectedly in {Environment} mode.",
-        hostEnvironment.ApplicationName,
-        hostEnvironment.EnvironmentName);
+    LogCrash(exception);
     return 1;
 }
 finally
@@ -53,11 +46,10 @@ finally
     Log.CloseAndFlush();
 }
 
-static Logger CreateLogger(IHostEnvironment hostEnvironment, IConfiguration configuration) =>
-    new LoggerConfiguration()
-        .ReadFrom.Configuration(configuration)
-        .Enrich.FromLogContext()
-        .Enrich.WithProperty("Application",
-            configuration["DOTNET_APPLICATIONNAME"] ?? hostEnvironment.ApplicationName)
-        .Enrich.WithProperty("Environment", hostEnvironment.EnvironmentName)
-        .CreateLogger();
+void LogLifecycle(string msg) => Log.Information(msg, applicationName, environmentName);
+
+void LogCrash(Exception exception) => Log.Fatal(
+    exception,
+    "{Application} terminated unexpectedly in {Environment} mode.",
+    hostEnvironment.ApplicationName,
+    hostEnvironment.EnvironmentName);

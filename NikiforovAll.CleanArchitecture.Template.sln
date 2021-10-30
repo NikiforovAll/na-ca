@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6ED356A7-8B47-4613-AD01-C85CF28491BD}"
 	ProjectSection(SolutionItems) = preProject
 		src\Directory.Build.props = src\Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{664D406C-2F83-48F0-BFC3-408D5CB53C65}"
@@ -40,9 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "src\Worker\Worker
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{76872C40-E56B-4335-95E1-624F3AC3A61F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.SharedKernel", "src\Domain.SharedKernel\Domain.SharedKernel.csproj", "{9B0A2C60-1496-40E2-B9A2-090B8E5FD1DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.SharedKernel", "src\Domain.SharedKernel\Domain.SharedKernel.csproj", "{9B0A2C60-1496-40E2-B9A2-090B8E5FD1DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.SharedKernel", "src\Application.SharedKernel\Application.SharedKernel.csproj", "{0DE34D03-20E5-4F2B-A95E-5076B1DD1615}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.SharedKernel", "src\Application.SharedKernel\Application.SharedKernel.csproj", "{0DE34D03-20E5-4F2B-A95E-5076B1DD1615}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

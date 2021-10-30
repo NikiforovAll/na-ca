@@ -6,13 +6,13 @@ using Nikiforoval.CA.Template.Application.SharedKernel.Interfaces;
 using Nikiforoval.CA.Template.Infrastructure;
 using Nikiforoval.CA.Template.Worker;
 using Serilog;
-using Serilog.Core;
 
 var host = CreateHostBuilder(args).Build();
 var hostEnvironment = host.Services.GetRequiredService<IHostEnvironment>();
 var applicationName = hostEnvironment.ApplicationName;
 var environmentName = hostEnvironment.EnvironmentName;
-Log.Logger = CreateLogger(host);
+Log.Logger = ApplicationLoggerFactory
+    .CreateLogger(host.Services.GetRequiredService<IConfiguration>(), hostEnvironment);
 
 try
 {
@@ -23,11 +23,7 @@ try
 }
 catch (Exception exception)
 {
-    Log.Fatal(
-        exception,
-        "{Application} terminated unexpectedly in {Environment} mode.",
-        applicationName,
-        environmentName);
+    LogCrash(exception);
     return 1;
 }
 finally
@@ -58,14 +54,8 @@ static IServiceCollection ConfigureServices(IServiceCollection services, IConfig
 
 void LogLifecycle(string msg) => Log.Information(msg, applicationName, environmentName);
 
-Logger CreateLogger(IHost host)
-{
-    var configuration = host.Services.GetRequiredService<IConfiguration>();
-    return new LoggerConfiguration()
-        .ReadFrom.Configuration(configuration)
-        .Enrich.FromLogContext()
-        .Enrich.WithProperty("Application",
-            configuration["DOTNET_APPLICATIONNAME"] ?? hostEnvironment.ApplicationName)
-        .Enrich.WithProperty("Environment", environmentName)
-        .CreateLogger();
-}
+void LogCrash(Exception exception) => Log.Fatal(
+    exception,
+    "{Application} terminated unexpectedly in {Environment} mode.",
+    hostEnvironment.ApplicationName,
+    hostEnvironment.EnvironmentName);

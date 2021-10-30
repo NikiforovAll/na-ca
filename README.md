@@ -7,7 +7,7 @@
 * [MediatR](https://github.com/jbogard/MediatR)
 * [AutoMapper](https://automapper.org/)
 * [FluentValidation](https://fluentvalidation.net/)
-* [XUnit](https://xunit.net/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq) & [Respawn](https://github.com/jbogard/Respawn)
+* [XUnit](https://xunit.net/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq), [Respawn](https://github.com/jbogard/Respawn)
 * [Docker](https://www.docker.com/)
 
 ## Overview
@@ -43,11 +43,11 @@ Inspired by:
 ## TODO
 
 
-TODO: [] ManagePackageVersionsCentrally
-TODO: [] Move logging to infra
+TODO: [X] ManagePackageVersionsCentrally
+TODO: [X] Move logging to infra
 TODO: [] required configuration
-TODO: [] fix formatting in csproj file, should be consistent
-TODO: [] migrate to latest and greatest, e.g: fluent validation
+TODO: [X] fix formatting in csproj file, should be consistent
+TODO: [] migrate to latest and greatest, e.g: fluent validation, dotnet-outdated
 TODO: [] add unit tests
 TODO: [] add integrations tests
 TODO: [] add github ci
@@ -57,3 +57,4 @@ TODO: [] TreatWarningsAsErrors
 TODO: [] check logging implementation, correct implemetation with LoggerMessage.Define
 TODO: [] cleanup appsettings.json
 TODO: [] add mass transit integration example for worker (optional)
+TODO: [] add example of application service, e.g: message broker publisher

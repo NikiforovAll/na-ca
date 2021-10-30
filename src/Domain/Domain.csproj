@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<RootNamespace>Nikiforoval.CA.Template.Domain</RootNamespace>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Nikiforoval.CA.Template.Domain</RootNamespace>
+  </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ardalis.Specification" Version="5.2.0" />
+    <PackageReference Include="Ardalis.Specification"/>
   </ItemGroup>
 
-	<ItemGroup Label="Project References">
-		<ProjectReference Include="..\Domain.SharedKernel\Domain.SharedKernel.csproj" />
-	</ItemGroup>
+  <ItemGroup Label="Project References">
+    <ProjectReference Include="..\Domain.SharedKernel\Domain.SharedKernel.csproj" />
+  </ItemGroup>
 
 </Project>
