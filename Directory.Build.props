@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup Label="Build">
+    <LangVersion>preview</LangVersion>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <NoWarn>VSTHRD111;$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Authoring">
+    <Authors>Oleksii Nikiforov</Authors>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="all" Version="17.0.63" />
+  </ItemGroup>
+
+</Project>

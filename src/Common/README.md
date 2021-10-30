@@ -1,0 +1,1 @@
+# Nikiforoval.CA.Template.Common
