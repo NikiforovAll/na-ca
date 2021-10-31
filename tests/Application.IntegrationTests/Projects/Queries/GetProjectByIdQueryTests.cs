@@ -12,7 +12,7 @@ using Nikiforovall.CA.Template.Tests.Common;
 public class GetProjectByIdQueryTests : IntegrationTestBase
 {
     [Theory, AutoData]
-    public void AliasIsNotSpecified(GetProjectByIdQuery query) =>
+    public void ProjectDoesNotExist_ExceptionThrow(GetProjectByIdQuery query) =>
         FluentActions.Invoking(() =>
             SendAsync(query)).Should().ThrowAsync<NotFoundException>();
 
