@@ -1,12 +1,12 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Console.Commands.Migrate;
+namespace Nikiforovall.CA.Template.Console.Commands.Migrate;
 
 using System.CommandLine;
 using System.CommandLine.Invocation;
 using Microsoft.Extensions.Logging;
-using Nikiforoval.CA.Template.Infrastructure.Persistence;
+using Nikiforovall.CA.Template.Infrastructure.Persistence;
 
 public class MigrateCommand : Command
 {

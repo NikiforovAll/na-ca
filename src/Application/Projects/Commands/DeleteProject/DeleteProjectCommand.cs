@@ -1,13 +1,13 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application.Projects.Commands.DeleteProject;
+namespace Nikiforovall.CA.Template.Application.Projects.Commands.DeleteProject;
 
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Nikiforoval.CA.Template.Application.Interfaces;
-using Nikiforoval.CA.Template.Application.SharedKernel.Exceptions;
-using Nikiforoval.CA.Template.Domain.ProjectAggregate;
+using Nikiforovall.CA.Template.Application.Interfaces;
+using Nikiforovall.CA.Template.Application.SharedKernel.Exceptions;
+using Nikiforovall.CA.Template.Domain.ProjectAggregate;
 
 public class DeleteProjectCommand : IRequest
 {

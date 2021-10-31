@@ -1,21 +1,21 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application.IntegrationTests.ToDoItems.Queries;
+namespace Nikiforovall.CA.Template.Application.IntegrationTests.ToDoItems.Queries;
 
-using Nikiforoval.CA.Template.Application.Projects.Models;
-using Nikiforoval.CA.Template.Application.SharedKernel.Exceptions;
-using Nikiforoval.CA.Template.Application.ToDoItems.Queries.SearchToDoItem;
-using Nikiforoval.CA.Template.Domain.ProjectAggregate;
-using Nikiforoval.CA.Template.Tests.Common;
+using Nikiforovall.CA.Template.Application.Projects.Models;
+using Nikiforovall.CA.Template.Application.SharedKernel.Exceptions;
+using Nikiforovall.CA.Template.Application.ToDoItems.Queries.SearchToDoItem;
+using Nikiforovall.CA.Template.Domain.ProjectAggregate;
+using Nikiforovall.CA.Template.Tests.Common;
 
 [Trait("Category", "Integration")]
 public class SearchTodoItemQueryTests : IntegrationTestBase
 {
     [Theory]
     [MemberData(nameof(InvalidSearchCommands))]
-    public void InvalidQueries_ExceptionThrown(SearchTodoItemQuery query) =>
-        FluentActions.Invoking(() =>
+    public async Task InvalidQueries_ExceptionThrownAsync(SearchTodoItemQuery query) =>
+        await FluentActions.Invoking(() =>
             SendAsync(query)).Should().ThrowAsync<ValidationException>();
 
     public static IEnumerable<object[]> InvalidSearchCommands()

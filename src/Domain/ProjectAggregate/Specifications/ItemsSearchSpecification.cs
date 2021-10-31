@@ -6,7 +6,9 @@ namespace Nikiforovall.CA.Template.Domain.ProjectAggregate.Specifications;
 using Ardalis.Specification;
 using Nikiforovall.CA.Template.Domain.ProjectAggregate;
 
-public class IncompleteItemsSpecification : Specification<ToDoItem>
+public class ItemsSearchSpecification : Specification<ToDoItem>
 {
-    public IncompleteItemsSpecification() => this.Query.Where(item => !item.IsDone);
+    public ItemsSearchSpecification(string searchString) =>
+        this.Query.Where(item => item.Title.Contains(searchString)
+            || item.Description!.Contains(searchString));
 }

@@ -1,11 +1,11 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Domain.UnitTests;
+namespace Nikiforovall.CA.Template.Domain.UnitTests;
 
 using AutoFixture.Xunit2;
-using Nikiforoval.CA.Template.Domain.ProjectAggregate;
-using Nikiforoval.CA.Template.Domain.ProjectAggregate.Events;
+using Nikiforovall.CA.Template.Domain.ProjectAggregate;
+using Nikiforovall.CA.Template.Domain.ProjectAggregate.Events;
 
 public class ToDoItemTests
 {

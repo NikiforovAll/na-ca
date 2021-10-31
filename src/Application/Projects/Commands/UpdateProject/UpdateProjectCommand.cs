@@ -1,12 +1,12 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application.Projects.Commands.UpdateProject;
+namespace Nikiforovall.CA.Template.Application.Projects.Commands.UpdateProject;
 
 using MediatR;
-using Nikiforoval.CA.Template.Application.Interfaces;
-using Nikiforoval.CA.Template.Application.SharedKernel.Exceptions;
-using Nikiforoval.CA.Template.Domain.ProjectAggregate;
+using Nikiforovall.CA.Template.Application.Interfaces;
+using Nikiforovall.CA.Template.Application.SharedKernel.Exceptions;
+using Nikiforovall.CA.Template.Domain.ProjectAggregate;
 
 public class UpdateProjectCommand : IRequest
 {

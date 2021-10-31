@@ -7,19 +7,14 @@ using AutoMapper;
 using Nikiforovall.CA.Template.Application.SharedKernel.Mappings;
 using Nikiforovall.CA.Template.Domain.ProjectAggregate;
 
-public class ProjectViewModel : IMapFrom<Project>
+public class ProjectSummaryViewModel : IMapFrom<Project>
 {
     public Guid Id { get; private set; }
 
     public string? Name { get; private set; }
 
-    public string DisplayName { get; private set; } = default!;
-
-    public IEnumerable<TodoItemViewModel>? Items { get; private set; }
-
     public ProjectStatus Status { get; private set; }
 
-    public void Mapping(Profile profile) => profile.CreateMap<Project, ProjectViewModel>()
-        .ForMember(p => p.DisplayName, opt => opt.MapFrom(p => $"{p.Name}[{p.Colour}]"))
+    public void Mapping(Profile profile) => profile.CreateMap<Project, ProjectSummaryViewModel>()
         .ForMember(p => p.Status, opt => opt.MapFrom(p => p.Status));
 }

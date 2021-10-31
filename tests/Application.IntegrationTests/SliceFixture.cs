@@ -1,7 +1,7 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application.IntegrationTests;
+namespace Nikiforovall.CA.Template.Application.IntegrationTests;
 
 using System.IO;
 using MediatR;
@@ -11,8 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using Nikiforoval.CA.Template.Api;
-using Nikiforoval.CA.Template.Infrastructure.Persistence;
+using Nikiforovall.CA.Template.Api;
+using Nikiforovall.CA.Template.Infrastructure.Persistence;
 using Npgsql;
 using Respawn;
 

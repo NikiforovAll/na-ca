@@ -1,10 +1,10 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Domain.ValueObjects;
+namespace Nikiforovall.CA.Template.Domain.ValueObjects;
 
-using Nikiforoval.CA.Template.Domain.Exceptions;
-using Nikiforoval.CA.Template.Domain.SharedKernel;
+using Nikiforovall.CA.Template.Domain.Exceptions;
+using Nikiforovall.CA.Template.Domain.SharedKernel;
 
 public class Colour : ValueObject
 {

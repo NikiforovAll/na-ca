@@ -1,11 +1,11 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application.IntegrationTests.Projects.Commands;
+namespace Nikiforovall.CA.Template.Application.IntegrationTests.Projects.Commands;
 
-using Nikiforoval.CA.Template.Application.Projects.Commands.CreateProject;
-using Nikiforoval.CA.Template.Application.SharedKernel.Exceptions;
-using Nikiforoval.CA.Template.Domain.ProjectAggregate;
+using Nikiforovall.CA.Template.Application.Projects.Commands.CreateProject;
+using Nikiforovall.CA.Template.Application.SharedKernel.Exceptions;
+using Nikiforovall.CA.Template.Domain.ProjectAggregate;
 
 [Trait("Category", "Integration")]
 public class CreateProjectCommandTests
@@ -14,10 +14,10 @@ public class CreateProjectCommandTests
     [InlineAutoData("")]
     [InlineAutoData("a")]
     [InlineAutoData("aa")]
-    public void NameIsTooShort_ExceptionThrown(string invalidName, CreateProjectCommand command)
+    public async Task NameIsTooShort_ExceptionThrownAsync(string invalidName, CreateProjectCommand command)
     {
         command.Name = invalidName;
-        FluentActions.Invoking(() =>
+        await FluentActions.Invoking(() =>
             SendAsync(command)).Should().ThrowAsync<ValidationException>();
     }
 

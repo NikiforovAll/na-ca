@@ -1,13 +1,13 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application;
+namespace Nikiforovall.CA.Template.Application;
 
 using System;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
-using Nikiforoval.CA.Template.Application.SharedKernel.Mappings;
+using Nikiforovall.CA.Template.Application.SharedKernel.Mappings;
 
 public class MappingProfile : Profile
 {
