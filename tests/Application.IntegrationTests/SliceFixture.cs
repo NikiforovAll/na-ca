@@ -3,7 +3,6 @@
 
 namespace Nikiforovall.CA.Template.Application.IntegrationTests;
 
-using System.IO;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
