@@ -3,8 +3,6 @@
 
 namespace Nikiforovall.CA.Template.Application;
 
-using System;
-using System.Linq;
 using System.Reflection;
 using AutoMapper;
 using Nikiforovall.CA.Template.Application.SharedKernel.Mappings;

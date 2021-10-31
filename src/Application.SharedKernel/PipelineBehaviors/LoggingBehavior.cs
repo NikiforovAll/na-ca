@@ -3,8 +3,6 @@
 
 namespace Nikiforovall.CA.Template.Application.SharedKernel.PipelineBehaviors;
 
-using System.Threading;
-using System.Threading.Tasks;
 using Application.SharedKernel.Utils;
 using MediatR;
 using Microsoft.Extensions.Logging;

@@ -3,8 +3,6 @@
 
 namespace Nikiforovall.CA.Template.Application.SharedKernel.Exceptions;
 
-using System;
-
 public class DuplicateDataException : Exception
 {
     public object? Key { get; }

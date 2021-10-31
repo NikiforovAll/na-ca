@@ -3,8 +3,6 @@
 
 namespace Nikiforovall.CA.Template.Application.ToDoItems.Commands.MarkComplete;
 
-using System.Threading;
-using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Nikiforovall.CA.Template.Application.Interfaces;
