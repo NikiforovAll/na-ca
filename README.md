@@ -1,4 +1,4 @@
-# Nikiforovall.CleanArchitecture.Tepmlate \[na-ca\]
+# NikiforovAll.CleanArchitecture.Template \[na-ca\]
 
 ## Technologies
 
