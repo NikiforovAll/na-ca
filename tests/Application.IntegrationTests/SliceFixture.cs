@@ -50,7 +50,6 @@ public class SliceFixture
         };
 
         EnsureDatabase();
-
     }
 
     private static void EnsureDatabase()

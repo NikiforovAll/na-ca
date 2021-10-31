@@ -27,7 +27,7 @@ public class MappingTests
 
     [Theory]
     [InlineData(typeof(Project), typeof(ProjectViewModel))]
-    [InlineData(typeof(ToDoItem), typeof(TodoItemSummaryViewModel))]
+    [InlineData(typeof(ToDoItem), typeof(TodoItemViewModel))]
     public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
     {
         var instance = GetInstanceOf(source);

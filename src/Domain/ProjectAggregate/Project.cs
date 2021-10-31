@@ -15,9 +15,9 @@ public class Project : AuditableEntity, IHasDomainEvent, IAggregateRoot
 
     public Colour Colour { get; private set; }
 
-    private readonly List<ToDoItem> items = new();
+    private readonly List<ToDoItem> items;
 
-    public IEnumerable<ToDoItem> Items => this.items.AsReadOnly();
+    public IEnumerable<ToDoItem> Items => this.items?.AsReadOnly() ?? Enumerable.Empty<ToDoItem>();
 
     public ProjectStatus Status => this.items.All(i => i.IsDone) ? ProjectStatus.Complete : ProjectStatus.InProgress;
 
@@ -26,13 +26,9 @@ public class Project : AuditableEntity, IHasDomainEvent, IAggregateRoot
     /// <summary>
     /// EF required
     /// </summary>
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-    private Project()
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-    {
-    }
+    private Project() => this.items = new();
 
-    public Project(string name, Colour colour)
+    public Project(string name, Colour colour) : this()
     {
         if (string.IsNullOrWhiteSpace(name))
         {

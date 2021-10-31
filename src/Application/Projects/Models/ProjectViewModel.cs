@@ -3,6 +3,7 @@
 
 namespace Nikiforoval.CA.Template.Application.Projects.Models;
 
+using AutoMapper;
 using Nikiforoval.CA.Template.Application.SharedKernel.Mappings;
 using Nikiforoval.CA.Template.Domain.ProjectAggregate;
 
@@ -10,11 +11,15 @@ public class ProjectViewModel : IMapFrom<Project>
 {
     public Guid Id { get; private set; }
 
-    public string Name { get; private set; }
+    public string? Name { get; private set; }
 
-    public string Colour { get; private set; }
+    public string DisplayName { get; private set; } = default!;
 
-    public IList<TodoItemSummaryViewModel> Items { get; private set; }
+    public IEnumerable<TodoItemViewModel>? Items { get; private set; }
 
     public ProjectStatus Status { get; private set; }
+
+    public void Mapping(Profile profile) => profile.CreateMap<Project, ProjectViewModel>()
+        .ForMember(p => p.DisplayName, opt => opt.MapFrom(p => $"{p.Name}[{p.Colour}]"))
+        .ForMember(p => p.Status, opt => opt.MapFrom(p => p.Status));
 }

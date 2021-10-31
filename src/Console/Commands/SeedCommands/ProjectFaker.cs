@@ -11,12 +11,27 @@ public class ProjectFaker : AutoFaker<Project>
 {
     public ProjectFaker()
     {
-        this.CustomInstantiator(faker => new Project(this.FakerHub.Company.Random.Word(), Colour.Purple));
+        var todoItemFaker = new ToDoItemFaker();
 
-        this.RuleFor(faker => faker.Colour, faker => Colour.From(Colour.Purple));
+        var colours = Colour.SupportedColours.ToList();
+
+        this.CustomInstantiator(faker =>
+            new Project(this.FakerHub.Company.Random.Word(), faker.PickRandom(colours)));
+
+        this.RuleFor(faker => faker.Colour, faker => faker.PickRandom(colours));
 
         this.Configure(builder => builder
             .WithSkip<Project>(p => p.LastModified)
             .WithSkip<Project>(p => p.LastModifiedBy));
+
+        this.FinishWith((fake, project) =>
+        {
+            var todos = todoItemFaker.Generate(fake.Random.Number(3));
+
+            foreach (var t in todos)
+            {
+                project.AddItem(t);
+            }
+        });
     }
 }

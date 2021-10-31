@@ -3,7 +3,6 @@
 
 namespace Nikiforoval.CA.Template.Application.IntegrationTests;
 
-using AutoFixture;
 using Nito.AsyncEx;
 
 public abstract class IntegrationTestBase : IAsyncLifetime

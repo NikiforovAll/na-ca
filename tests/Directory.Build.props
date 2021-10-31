@@ -24,6 +24,8 @@
     <Using Include="FluentAssertions" />
     <Using Include="Xunit" />
     <Using Include="Xunit.Abstractions" />
+    <Using Include="AutoFixture" />
+    <Using Include="AutoFixture.Xunit2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +36,10 @@
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Update="Ardalis.SmartEnum.AutoFixture" Version="1.0.31" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TestUtils)' != 'true'" >
+    <ProjectReference Include="..\Tests.Common\Tests.Common.csproj" />
   </ItemGroup>
 
 </Project>

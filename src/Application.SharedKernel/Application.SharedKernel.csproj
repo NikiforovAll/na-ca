@@ -10,6 +10,7 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" />
   </ItemGroup>
 
   <ItemGroup Label="Project References">

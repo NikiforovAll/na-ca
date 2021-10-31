@@ -6,13 +6,13 @@ namespace Nikiforoval.CA.Template.Application.Projects.Models;
 using Nikiforoval.CA.Template.Application.SharedKernel.Mappings;
 using Nikiforoval.CA.Template.Domain.ProjectAggregate;
 
-public class TodoItemSummaryViewModel : IMapFrom<ToDoItem>
+public class TodoItemViewModel : IMapFrom<ToDoItem>
 {
-    public int Id { get; private set; }
+    public int Id { get; set; }
 
     public string? Title { get; set; }
 
-    public string? Description { get; private set; }
+    public string? Description { get; set; }
 
-    public bool IsDone { get; private set; }
+    public bool IsDone { get; set; }
 }

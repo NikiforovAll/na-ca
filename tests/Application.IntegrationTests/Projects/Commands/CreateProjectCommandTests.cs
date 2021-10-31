@@ -1,10 +1,9 @@
 // Copyright (c) Oleksii Nikiforov, 2018. All rights reserved.
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
-namespace Nikiforoval.CA.Template.Application.IntegrationTests.Projects;
+namespace Nikiforoval.CA.Template.Application.IntegrationTests.Projects.Commands;
 
-using AutoFixture.Xunit2;
-using Nikiforoval.CA.Template.Application.Projects.Commands;
+using Nikiforoval.CA.Template.Application.Projects.Commands.CreateProject;
 using Nikiforoval.CA.Template.Application.SharedKernel.Exceptions;
 using Nikiforoval.CA.Template.Domain.ProjectAggregate;
 
@@ -34,5 +33,6 @@ public class CreateProjectCommandTests
         entity.Name.Should().Be(command.Name);
         entity.Status.Should().Be(ProjectStatus.Complete);
         entity.Items.Should().BeEmpty();
+        entity.Created.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
     }
 }

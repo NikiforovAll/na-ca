@@ -12,9 +12,13 @@ using Spectre.Console;
 public class SeedProjectCommand : Command
 {
     public SeedProjectCommand()
-        : base(name: "seed-projects", "Seeds projects into database")
+        : base(name: "seed-projects", "Seeds projects into database.")
     {
         this.AddOption(new Option<bool>("--dry-run", "Skip insertion into the database"));
+        this.AddOption(new Option<int>(
+            aliases: new string[] { "--number-of-projects", "-nop" },
+            getDefaultValue: () => 1,
+            description: "The number of projects."));
     }
 
     public class Run : ICommandHandler
@@ -30,10 +34,12 @@ public class SeedProjectCommand : Command
 
         public bool DryRun { get; set; }
 
+        public int NumberOfProjects { get; set; }
+
         public async Task<int> InvokeAsync(InvocationContext context)
         {
             var faker = new ProjectFaker();
-            var projects = faker.Generate(10);
+            var projects = faker.Generate(this.NumberOfProjects);
 
             if (!this.DryRun)
             {

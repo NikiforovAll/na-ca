@@ -11,7 +11,7 @@ using Nikiforoval.CA.Template.Infrastructure.Persistence;
 public class MigrateCommand : Command
 {
     public MigrateCommand()
-        : base(name: "migrate", "Migrates the project database")
+        : base(name: "migrate", "Migrates the project database. WARNING: creates database if the specified database was not found.")
     {
     }
 
