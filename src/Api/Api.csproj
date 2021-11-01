@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Nikiforovall.CA.Template.Api</RootNamespace>
-    <AssemblyName>Nikiforovall.CA.Template.Api</AssemblyName>
+    <RootNamespace>NikiforovAll.CA.Template.Api</RootNamespace>
+    <AssemblyName>NikiforovAll.CA.Template.Api</AssemblyName>
     <IsPackable>true</IsPackable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>

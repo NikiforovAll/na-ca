@@ -14,7 +14,6 @@
 * [Respawn](https://github.com/jbogard/Respawn)
 * [Docker](https://www.docker.com/)
 
-
 ## Principles
 
 * DDD

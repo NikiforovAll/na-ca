@@ -41,4 +41,4 @@ FROM base AS final
 
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Nikiforovall.CA.Template.Api.dll"]
+ENTRYPOINT ["dotnet", "NikiforovAll.CA.Template.Api.dll"]
