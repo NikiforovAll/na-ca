@@ -5,7 +5,7 @@ namespace NikiforovAll.CA.Template.Worker.Contracts;
 
 public interface IMarkToDoItemComplete
 {
-    public Guid ProjectId { get; set; }
+    public Guid ProjectId { get; }
 
-    public int ItemId { get; set; }
+    public int ItemId { get; }
 }
