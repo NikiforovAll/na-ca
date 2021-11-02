@@ -6,7 +6,7 @@ namespace NikiforovAll.CA.Template.Worker.Consumers.CreateProjectConsumer;
 using MassTransit;
 using MediatR;
 using NikiforovAll.CA.Template.Application.Projects.Commands.CreateProject;
-using NikiforovAll.CA.Template.Worker.Contracts;
+using NikiforovAll.CA.Template.Messaging.Contracts;
 
 public class CreateProjectConsumer : IConsumer<ICreateProject>
 {

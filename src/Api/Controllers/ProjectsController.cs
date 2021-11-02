@@ -9,7 +9,7 @@ using NikiforovAll.CA.Template.Application.Projects.Models;
 using NikiforovAll.CA.Template.Application.Projects.Queries.GetProject;
 using NikiforovAll.CA.Template.Application.Projects.Queries.GetProjects;
 using NikiforovAll.CA.Template.Application.SharedKernel.Models;
-using NikiforovAll.CA.Template.Worker.Contracts;
+using NikiforovAll.CA.Template.Messaging.Contracts;
 using NSwag.Annotations;
 
 /// <summary>
