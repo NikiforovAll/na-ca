@@ -8,12 +8,12 @@ using NikiforovAll.CA.Template.Application.Interfaces;
 using NikiforovAll.CA.Template.Application.SharedKernel.Models;
 using NikiforovAll.CA.Template.Domain.ProjectAggregate.Events;
 
-public class AdminNotificationHandler
+public class EmailNotificationHandler
     : INotificationHandler<DomainEventNotification<ProjectCreatedEvent>>
 {
     private readonly IEmailSender emailSender;
 
-    public AdminNotificationHandler(IEmailSender emailSender)
+    public EmailNotificationHandler(IEmailSender emailSender)
         => this.emailSender = emailSender;
 
     public async Task Handle(
