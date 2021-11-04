@@ -3,9 +3,9 @@
 
 namespace NikiforovAll.CA.Template.Messaging.Contracts;
 
-public interface ICreateProject
+public interface MarkToDoItemComplete
 {
-    public string Name { get; }
+    public Guid ProjectId { get; }
 
-    public string Colour { get; }
+    public int ItemId { get; }
 }
