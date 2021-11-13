@@ -10,7 +10,7 @@ using NikiforovAll.CA.Template.Domain.ProjectAggregate.Events;
 using NikiforovAll.CA.Template.Domain.ValueObjects;
 
 [Trait("Category", "Integration")]
-public class CreateProjectCommandTests
+public class CreateProjectCommandTests : IntegrationTestBase
 {
     [Theory]
     [InlineAutoData("")]
